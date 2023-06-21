@@ -1,3 +1,11 @@
+
+
+
+@font-face {
+    font-family: "Roboto Regular";
+    src: url(../../public/fonts/Roboto/Roboto-Regular.ttf);
+}
+
 .header {
     display: flex;
     flex-direction: column;

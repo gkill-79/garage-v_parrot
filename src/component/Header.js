@@ -6,7 +6,7 @@ function Header() {
         <header className={styles.header}>
             <div className={styles.logoSection}>
                 <Image src="/path-to-logo.png" alt="Logo" width={60} height={60} />
-                <h1 className={styles.title}>v.p-parrot garage</h1>
+                <h1 className={styles.title}>v.parrot garage</h1>
             </div>
             <div className={styles.middleSection}>
                 <input type="search" placeholder="Rechercher" className={styles.search} />
