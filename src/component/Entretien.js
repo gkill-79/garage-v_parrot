@@ -10,7 +10,10 @@ const Entretien = () => {
                 <article>
                     <h3>Vidange et Révision</h3>
                     <div className={styles.card}>
-                        <img src="../../public/img/entretien.jpg" alt="Vidange et Révision" />
+                        <img src="/img/entretien.jpg" alt="Vidange et Révision" 
+                        width={398}
+                        height={380}
+                        />
                         <div className={styles['card-content']}>
                             <h4>Vidange et Révision</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum excepturi quo a placeat voluptatem at vitae molestias aspernatur, corrupti voluptatum.</p>
@@ -21,7 +24,10 @@ const Entretien = () => {
                 <article>
                     <h3>Carosserie</h3>
                     <div className={styles.card}>
-                        <img src="../../public/img/carosserie.jpg" alt="Carosserie" />
+                        <img src="/img/carosserie.jpg" alt="Carosserie" 
+                        width={398}
+                        height={380}
+                        />
                         <div className={styles['card-content']}>
                             <h4>Carosserie</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum excepturi quo a placeat voluptatem at vitae molestias aspernatur, corrupti voluptatum.</p>
@@ -32,7 +38,10 @@ const Entretien = () => {
                 <article>
                     <h3>Forfait Freinage</h3>
                     <div className={styles.card}>
-                        <img src="../../public/img/freinage.jpg" alt="Forfait Freinage" />
+                        <img src="/img/freinage.jpg" alt="Forfait Freinage" 
+                        width={398}
+                        height={380}
+                        />
                         <div className={styles['card-content']}>
                             <h4>Forfait Freinage</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum excepturi quo a placeat voluptatem at vitae molestias aspernatur, corrupti voluptatum.</p>
@@ -45,7 +54,10 @@ const Entretien = () => {
                 <article>
                     <h3>Contrôle Technique</h3>
                     <div className={styles.card}>
-                        <img src="../../public/img/front.jpg" alt="Contrôle Technique" />
+                        <img src="/img/front.jpg" alt="Contrôle Technique" 
+                        width={398}
+                        height={380}
+                        />
                         <div className={styles['card-content']}>
                             <h4>Contrôle Technique</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum excepturi quo a placeat voluptatem at vitae molestias aspernatur, corrupti voluptatum.</p>
@@ -56,7 +68,10 @@ const Entretien = () => {
                 <article>
                     <h3>Autres Prestations</h3>
                     <div className={styles.card}>
-                        <img src="../../public/img/services.jpg" alt="Autres Prestations" />
+                        <img src="/img/services.jpg" alt="Autres Prestations" 
+                        width={398}
+                        height={380}
+                        />
                         <div className={styles['card-content']}>
                             <h4>Autres Prestations</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum excepturi quo a placeat voluptatem at vitae molestias aspernatur, corrupti voluptatum.</p>

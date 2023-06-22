@@ -16,6 +16,10 @@
     margin-top: 2rem;
 }
 
+.card-container h3 {
+    text-align: center;
+}
+
 .card-container:last-child {
     justify-content: center;
 }
