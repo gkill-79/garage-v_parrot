@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function RootHome({ children }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -20,6 +20,8 @@ export default function Home() {
 
         <div className={styles.grid}>
           <a href="/Entretien" className={styles.card}>
+          <img src="/images/profile.jpg" alt="Your Name" width={398}
+                        height={180} />
             <h3>Entretien &rarr;</h3>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>

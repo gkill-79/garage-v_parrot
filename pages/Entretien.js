@@ -8,7 +8,7 @@ const Entretien = () => {
                 <article>
                     <h3>Vidange et Révision</h3>
                     <div className={styles.card}>
-                        <img src="/img/entretien.jpg" alt="Vidange et Révision" 
+                        <img src="/imgages/entretien.jpg" alt="Vidange et Révision" 
                         width={398}
                         height={380}
                         />
@@ -22,7 +22,7 @@ const Entretien = () => {
                 <article>
                     <h3>Carosserie</h3>
                     <div className={styles.card}>
-                        <img src="/img/carosserie.jpg" alt="Carosserie" 
+                        <img src="/imgages/carosserie.jpg" alt="Carosserie" 
                         width={398}
                         height={380}
                         />
@@ -36,7 +36,7 @@ const Entretien = () => {
                 <article>
                     <h3>Forfait Freinage</h3>
                     <div className={styles.card}>
-                        <img src="/img/freinage.jpg" alt="Forfait Freinage" 
+                        <img src="/imgages/freinage.jpg" alt="Forfait Freinage" 
                         width={398}
                         height={380}
                         />
@@ -52,7 +52,7 @@ const Entretien = () => {
                 <article>
                     <h3>Contrôle Technique</h3>
                     <div className={styles.card}>
-                        <img src="/img/front.jpg" alt="Contrôle Technique" 
+                        <img src="/imgages/front.jpg" alt="Contrôle Technique" 
                         width={398}
                         height={380}
                         />
@@ -66,7 +66,7 @@ const Entretien = () => {
                 <article>
                     <h3>Autres Prestations</h3>
                     <div className={styles.card}>
-                        <img src="/img/services.jpg" alt="Autres Prestations" 
+                        <img src="/imgages/services.jpg" alt="Autres Prestations" 
                         width={398}
                         height={380}
                         />
