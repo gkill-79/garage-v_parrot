@@ -29,7 +29,8 @@ function Header() {
             </div>
             <nav className={styles.navigation}>
                 <ul>
-                    <li><a href="/occasion">Occasion</a></li>
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/Home/occasion">Occasion</a></li>
                     <li><a href="/entretient">Entretient</a></li>
                     <li><a href="/services">Services</a></li>
                     <li><a href="/bon-plan">Bon Plan</a></li>
