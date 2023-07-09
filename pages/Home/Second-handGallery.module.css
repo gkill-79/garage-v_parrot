@@ -1,0 +1,12 @@
+
+/* pages/Home/Second-handGallery.module.css */
+.CarContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 0 50px 0;
+  flex-wrap: wrap;
+}

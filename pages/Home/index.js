@@ -6,6 +6,7 @@ import Entretien from './Entretien'
 import Footer from '../Componente/Footer'
 import Header from '../Componente/Header'
 import AppointmentForm from './AppointmentForm'
+import SomeComponent from './Second-handGallery'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header />
         <Entretien />
+        <SomeComponent />
         <AppointmentForm />
         {children}
         </body>
