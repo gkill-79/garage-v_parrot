@@ -1,3 +1,5 @@
+// pages\Entretien.js:
+
 import styles from './Entretien.module.css'
 
 const Entretien = () => {
@@ -8,7 +10,7 @@ const Entretien = () => {
                 <article>
                     <h3>Vidange et Révision</h3>
                     <div className={styles.card}>
-                        <img src="/imgages/entretien.jpg" alt="Vidange et Révision" 
+                        <img src="/images/entretien.jpg" alt="Vidange et Révision" 
                         width={398}
                         height={380}
                         />
@@ -22,7 +24,7 @@ const Entretien = () => {
                 <article>
                     <h3>Carosserie</h3>
                     <div className={styles.card}>
-                        <img src="/imgages/carosserie.jpg" alt="Carosserie" 
+                        <img src="/images/carosserie.jpg" alt="Carosserie" 
                         width={398}
                         height={380}
                         />
@@ -36,7 +38,7 @@ const Entretien = () => {
                 <article>
                     <h3>Forfait Freinage</h3>
                     <div className={styles.card}>
-                        <img src="/imgages/freinage.jpg" alt="Forfait Freinage" 
+                        <img src="/images/freinage.jpg" alt="Forfait Freinage" 
                         width={398}
                         height={380}
                         />
@@ -52,7 +54,7 @@ const Entretien = () => {
                 <article>
                     <h3>Contrôle Technique</h3>
                     <div className={styles.card}>
-                        <img src="/imgages/front.jpg" alt="Contrôle Technique" 
+                        <img src="/images/front.jpg" alt="Contrôle Technique" 
                         width={398}
                         height={380}
                         />
@@ -66,7 +68,7 @@ const Entretien = () => {
                 <article>
                     <h3>Autres Prestations</h3>
                     <div className={styles.card}>
-                        <img src="/imgages/services.jpg" alt="Autres Prestations" 
+                        <img src="/images/services.jpg" alt="Autres Prestations" 
                         width={398}
                         height={380}
                         />

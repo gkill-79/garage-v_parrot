@@ -1,3 +1,5 @@
+// pages\index.js:
+
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
@@ -26,8 +28,8 @@ export default function RootHome({ children }) {
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
+          <a href="/Home" className={styles.card}>
+            <h3>Home &rarr;</h3>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
 
