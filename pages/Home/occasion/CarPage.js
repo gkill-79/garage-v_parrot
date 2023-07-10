@@ -10,7 +10,7 @@ const CarPage = ({ car }) => {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.imageContainer}>
-        <img src={imageUrl} alt="Car" className={styles.carImage} />
+        <img src={car.imageUrl} alt={`Car ${car.id}`} className={styles.carImage} />
       </div>
       <div className={styles.infoContainer}>
         <h1 className={styles.title}>Détails du véhicule</h1>

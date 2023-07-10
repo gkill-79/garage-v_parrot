@@ -1,32 +1,48 @@
+
+// pages\Home\Second-handGallery.js
 // Une page ou un composant qui utilise le composant CarCard
 import CarCard from '../Componente/CarCard';
 import styles from './Second-handGallery.module.css'
+import SelectCar from './occasion/SelectCar';
+
 
 const cars = [
-  {
-    price: 10000,
-    imageUrl: 'url1',
-    year: 2010,
-    mileage: 120000
-  },
-  {
-    price: 15000,
-    imageUrl: 'url2',
-    year: 2015,
-    mileage: 80000
-  },
-  {
-    price: 20000,
-    imageUrl: 'url3',
-    year: 2018,
-    mileage: 50000
-  }
-];
+    {
+      id: 1,
+      price: 10000,
+      imageUrl: '/images/v-occas1.jpg',
+      year: 2010,
+      mileage: 120000
+    },
+    {
+      id: 2,
+      price: 15000,
+      imageUrl: '/images/v-occas2.jpg',
+      year: 2015,
+      mileage: 80000
+    },
+    {
+      id: 3,
+      price: 20000,
+      imageUrl: '/images/v-occas3.jpg',
+      year: 2018,
+      mileage: 50000
+    }
+  ];
+  
+  
 
-const SomeComponent = () => (
-    <div className={styles.CarContainer}>
-      {cars.map((car, index) => <CarCard car={car} key={index} />)}
-    </div>
-  );
+  const SomeComponent = () => {
+    const renderCar = (car) => {
+        return <CarCard car={car} />;
+    };
+
+    return (
+        <div className={styles.CarContainer}>
+            <SelectCar cars={cars} renderCar={renderCar} />
+        </div>
+    );
+};
+
 
 export default SomeComponent;

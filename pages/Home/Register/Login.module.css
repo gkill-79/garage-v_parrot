@@ -1,50 +1,79 @@
 
 
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
 
+.row {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;;
+  background-color: #FFEEBB;
+}
 
-.login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  input {
-    display: block;
-    margin-top: 0.5rem;
-    width: 100%;
-  }
-  
-  button {
-    margin-top: 1rem;
-    width: 100%;
-  }
-  
-  .create-account {
-    margin-top: 2rem;
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #e0b936;
-    font-weight: bold;
-  }
-  
-  .create-account:hover {
-    color: #3ec4ec;
-  }
+.col-10, .col-lg-5 {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.formContainer {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+.form-outline {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+#email_field, #password_field {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  padding: .375rem .75rem;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
   

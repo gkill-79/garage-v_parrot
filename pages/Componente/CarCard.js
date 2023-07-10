@@ -1,8 +1,11 @@
-// components/CarCard.js
 import React from 'react';
 import styles from './CarCard.module.css';
 
 const CarCard = ({ car }) => {
+  if (!car) {
+    return <div>Pas de voiture sélectionnée</div>;
+  }
+
   const { price, imageUrl, year, mileage } = car;
 
   return (
@@ -20,3 +23,4 @@ const CarCard = ({ car }) => {
 };
 
 export default CarCard;
+
