@@ -1,14 +1,10 @@
-// pages\Home\index.js:
-
-// import '@/styles/globals.css'
-import { Inter } from 'next/font/google'
+// pages/Home/index.js
+import Head from 'next/head'
 import Entretien from './Entretien'
 import Footer from '../Componente/Footer'
 import Header from '../Componente/Header'
 import AppointmentForm from './AppointmentForm'
 import SomeComponent from './Second-handGallery'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,20 +13,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
-      <body className={inter.className}>
-        <Header />
-        <Entretien />
-        <SomeComponent />
-        <AppointmentForm />
-        {children}
-        </body>
-      <div>
-        <Footer />
-      </div>
-    </html>
+    <>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Garage V-Parrot</title>
+      </Head>
+      <Header />
+      <Entretien />
+      <SomeComponent />
+      <AppointmentForm />
+      {children}
+      <Footer />
+    </>
   )
 }
+
+  
 
 
 
