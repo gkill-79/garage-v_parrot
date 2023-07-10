@@ -57,16 +57,17 @@
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
   padding: .375rem .75rem;
   line-height: 1.5;
   border: 1px solid transparent;
   border-radius: .25rem;
 }
+
 
 .text-center {
   text-align: center;

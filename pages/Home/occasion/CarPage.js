@@ -2,7 +2,7 @@
 
 // pages/Car/CarPage.js
 import React from 'react';
-import styles from './CarPage.module.css';
+import styles from '../../../styles/Home/Occasion/CarPage.module.css';
 
 const CarPage = ({ car }) => {
   const { price, imageUrl, year, mileage } = car;

@@ -1,6 +1,6 @@
 // pages/Home/AppointmentForm.js
 import React, { useState } from 'react';
-import styles from './AppointmentForm.module.css';
+import styles from '../../styles/Home/AppointmentForm.module.css';
 
 const AppointmentForm = () => {
   const handleSubmit = (event) => {

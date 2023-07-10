@@ -1,5 +1,5 @@
 // pages/Home/occasion/SelectCar.js
-import styles from './SelectCar.module.css';
+import styles from '../../../styles/Home/Occasion/SelectCar.module.css';
 import React, { useState } from 'react';
 
 const SelectCar = ({ cars, renderCar }) => {

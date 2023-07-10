@@ -1,9 +1,9 @@
 
 
 import React, { useState } from "react";
-import styles from './Register.module.css';
-import Header from '../../Componente/Header';
-import Footer from '../../Componente/Footer';
+import styles from '../../../styles/Home/Register/Register.module.css';
+import Header from '../../../Componente/Header';
+import Footer from '../../../Componente/Footer';
 
 const Register = () => {
   const [name, setName] = useState("");

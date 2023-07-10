@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import styles from './Login.module.css';
-import Header from '../../Componente/Header';
-import Footer from '../../Componente/Footer';
+import styles from '../../../styles/Home/Register/Login.module.css';
+import Header from '../../../Componente/Header';
+import Footer from '../../../Componente/Footer';
 
 const Login = () => {
   const [email, setEmail] = useState("");

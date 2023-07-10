@@ -1,8 +1,8 @@
 // pages/Home/index.js
 import Head from 'next/head'
 import Entretien from './Entretien'
-import Footer from '../Componente/Footer'
-import Header from '../Componente/Header'
+import Footer from '../../Componente/Footer'
+import Header from '../../Componente/Header'
 import AppointmentForm from './AppointmentForm'
 import SomeComponent from './Second-handGallery'
 

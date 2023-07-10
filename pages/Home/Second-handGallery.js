@@ -1,9 +1,9 @@
 
 // pages\Home\Second-handGallery.js
 // Une page ou un composant qui utilise le composant CarCard
-import CarCard from '../Componente/CarCard';
-import styles from './Second-handGallery.module.css'
-import SelectCar from './occasion/SelectCar';
+import CarCard from '../../Componente/CarCard';
+import styles from '../../styles/Home/Second-handGallery.module.css'
+import SelectCar from './Occasion/SelectCar';
 
 
 const cars = [

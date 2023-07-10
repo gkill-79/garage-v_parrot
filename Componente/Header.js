@@ -4,7 +4,7 @@
 // src/components/Header.js
 import Link from 'next/link' // Changer de react-router-dom à next/link&
 import Image from 'next/image'
-import styles from './Header.module.css'
+import styles from '../styles/Header.module.css'
 
 function Header() {
     return (
@@ -30,7 +30,7 @@ function Header() {
             <nav className={styles.navigation}>
                 <ul>
                     <li><a href="/Home">Home</a></li>
-                    <li><a href="/Home/occasion">Occasion</a></li>
+                    <li><a href="/Home/Occasion">Occasion</a></li>
                     <li><a href="/entretient">Entretient</a></li>
                     <li><a href="/services">Services</a></li>
                     <li><a href="/bon-plan">Bon Plan</a></li>

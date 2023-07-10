@@ -1,9 +1,9 @@
 // pages\Home\Register\index.js:
 
 import Link from 'next/link';
-import styles from './Links.module.css';
-import Header from '../../Componente/Header';
-import Footer from '../../Componente/Footer';
+import styles from '../../../styles/Home/Register/Links.module.css';
+import Header from '../../../Componente/Header';
+import Footer from '../../../Componente/Footer';
 
 const LinksPage = () => {
   return (
