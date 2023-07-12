@@ -125,11 +125,11 @@
 
 // pages/index.js
 import Head from 'next/head'
-import Entretien from './Home/Entretien'
+import Entretien from './Entretien'
 import Footer from '../Componente/Footer'
 import Header from '../Componente/Header'
-import AppointmentForm from './Home/AppointmentForm'
-import SomeComponent from './Home/Second-handGallery'
+import AppointmentForm from './AppointmentForm'
+import SomeComponent from './Second-handGallery'
 
 export const metadata = {
   title: 'Create Next App',

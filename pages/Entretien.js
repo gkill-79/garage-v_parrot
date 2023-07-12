@@ -1,6 +1,6 @@
 // pages\Entretien.js:
 
-import styles from '../../styles/Home/Entretien.module.css'
+import styles from '../styles/Home/Entretien.module.css'
 
 const Entretien = () => {
     return (

@@ -31,7 +31,7 @@ function Header() {
                 <ul>
                     <li><a href="/Home">Home</a></li>
                     <li><a href="/Home/Occasion">Occasion</a></li>
-                    <li><a href="/entretient">Entretient</a></li>
+                    <li><a href="/Home/Entretient">Entretient</a></li>
                     <li><a href="/services">Services</a></li>
                     <li><a href="/bon-plan">Bon Plan</a></li>
                 </ul>

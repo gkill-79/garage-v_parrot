@@ -1,19 +1,20 @@
-
 // pages/Home/Occasion/CarListPage.js
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../../Componente/Header';
 import Footer from '../../../Componente/Footer';
-import CarCard from '../../../Componente/CarCard';
+import CarPage from './CarPage';
 import SelectCar from './SelectCar';
 import styles from '../../../styles/Home/Occasion/CarListPage.module.css';
 
 const CarListPage = ({ cars }) => {
+  const [selectedCar, setSelectedCar] = useState(null); // aucune voiture sélectionnée par défaut
 
   return (
     <div>
       <Header />
       <div className={styles.pageContainer}>
-        <SelectCar cars={cars} renderCar={(car) => <CarCard car={car} />} />
+        <SelectCar cars={cars} selectedCar={selectedCar} setSelectedCar={setSelectedCar} />
+        {selectedCar && <CarPage car={selectedCar} />}
       </div>
       <Footer />
     </div>
@@ -21,3 +22,4 @@ const CarListPage = ({ cars }) => {
 };
 
 export default CarListPage;
+

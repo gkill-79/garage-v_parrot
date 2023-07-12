@@ -1,10 +1,10 @@
 // pages/Home/index.js
 import Head from 'next/head'
-import Entretien from './Entretien'
+import Entretien from '../Entretien'
 import Footer from '../../Componente/Footer'
 import Header from '../../Componente/Header'
-import AppointmentForm from './AppointmentForm'
-import SomeComponent from './Second-handGallery'
+import AppointmentForm from '../AppointmentForm'
+import SomeComponent from '../Second-handGallery'
 
 export const metadata = {
   title: 'Create Next App',
@@ -31,6 +31,18 @@ export default function RootLayout({ children }) {
 
   
 
+// // /pages/Home.js
+// import React from 'react';
+
+// function Home() {
+//   return (
+//     <div>
+//       <h1>Bienvenue à la maison!</h1>
+//     </div>
+//   );
+// }
+
+// export default Home;
 
 
 
