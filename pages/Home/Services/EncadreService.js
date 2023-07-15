@@ -2,7 +2,7 @@
 
 // EncadreService.js
 import React from 'react';
-import styles from '../../../styles/Home/Entretient/EncadreService.module.css';
+import styles from '../../../styles/Home/Services/EncadreService.module.css';
 
 const EncadreService = ({ image, imgClassName, price, text }) => {
     return (

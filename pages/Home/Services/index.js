@@ -2,7 +2,7 @@
 import Header from '../../../Componente/Header';
 import Footer from '../../../Componente/Footer';
 import EncadreService from './EncadreService';
-import styles from '../../../styles/Home/Entretient/ServicePage.module.css';
+import styles from '../../../styles/Home/Services/ServicePage.module.css';
 
 const ServicePage = () => {
   return (
