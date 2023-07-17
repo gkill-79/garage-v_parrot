@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styles from '../styles/Home/AppointmentForm.module.css';
 
 const AppointmentForm = () => {
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {  // 1. Ajoutez "async" ici pour pouvoir utiliser "await" dans la fonction.
     event.preventDefault();
     const { firstname, lastname, email, phone, message, date, time, repairType } = event.target.elements;
     const appointment = {
@@ -17,6 +17,21 @@ const AppointmentForm = () => {
       repairType: repairType.value,
     };
     console.log(appointment);
+
+    // 2. Déplacez le bloc de requête fetch dans cette fonction pour l'exécuter lors de la soumission du formulaire.
+    const response = await fetch('/api/appointments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(appointment),
+    });
+
+    if (response.ok) {
+      console.log('Succès:', await response.json());
+    } else {
+      console.error('Erreur:', await response.json());
+    }
   };
 
   return (
@@ -103,6 +118,4 @@ const AppointmentForm = () => {
 };
 
 export default AppointmentForm;
-
-
 
