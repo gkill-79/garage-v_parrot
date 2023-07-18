@@ -2,7 +2,7 @@
 
 
 // pages/Home/Occasion/CarCard.js
-import styles from '../styles/CarCard.module.css';
+import styles from '../styles/Componentes/CarCard.module.css';
 
 const CarCard = ({ car }) => {  // Changement de "cars" à "car"
   if (!car) {

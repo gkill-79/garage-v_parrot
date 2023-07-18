@@ -3,7 +3,7 @@
 
 
 import React from 'react';
-import styles from '../styles/Footer.module.css';
+import styles from '../styles/Componentes/Footer.module.css';
 
 const Footer = () => {
     return (

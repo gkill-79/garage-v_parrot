@@ -4,7 +4,7 @@
 // src/components/Header.js
 import Link from 'next/link' // Changer de react-router-dom à next/link&
 import Image from 'next/image'
-import styles from '../styles/Header.module.css'
+import styles from '../styles/Componentes/Header.module.css'
 
 function Header() {
     return (
@@ -31,7 +31,7 @@ function Header() {
                 <ul>
                     <li><a href="/Home">Home</a></li>
                     <li><a href="/Home/Occasion">Occasion</a></li>
-                    <li><a href="/Home/Entretient">Entretient</a></li>
+                    <li><a href="/Home/Entretien">Entretien</a></li>
                     <li><a href="/Home/Services">Services</a></li>
                     <li><a href="/bon-plan">Bon Plan</a></li>
                 </ul>

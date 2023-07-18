@@ -3,12 +3,9 @@
 
 
 
-
-
-// pages/Home/Services/Carousel.js
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import EncadreService from './EncadreService';
+import EncadreService from '../Services/EncadreService';
 import styles from '../../../styles/Home/Services/Carousel.module.css';
 
 const Carousel = ({ items }) => {
@@ -27,26 +24,27 @@ const Carousel = ({ items }) => {
     };
   
     return (
-      <div className='carousel-container'>
+      <div className={styles['carousel-container']}>
         <EncadreService 
           image={items[currentIndex].image} 
           price={items[currentIndex].price} 
           text={items[currentIndex].text} 
-          className='carousel-slide' 
+          className={styles['carousel-slide']} 
         />
         {/* Left Arrow */}
-        <div className='carousel-arrow carousel-arrow-left'>
+        <div className={styles['carousel-arrow']}{['carousel-arrow-left']}>
           <BsChevronCompactLeft onClick={prevSlide} size={30} />
         </div>
         {/* Right Arrow */}
-        <div className='carousel-arrow carousel-arrow-right'>
+        <div className={styles['carousel-arrow']}{['carousel-arrow-right']}>
           <BsChevronCompactRight onClick={nextSlide} size={30} />
         </div>
       </div>
     );
-  };
+};
   
-  export default Carousel;
+export default Carousel;
+
 
 
 
