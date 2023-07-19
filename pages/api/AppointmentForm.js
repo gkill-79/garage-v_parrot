@@ -15,7 +15,6 @@ export async function DELETE(request) {
   return NextResponse.status(200).json({ message: "Appointment successfully deleted" });
 }
 
-
 export async function PUT(request) {
   const { id } = request.params;
   const appointmentRepository = getRepository(Appointment);
@@ -38,12 +37,9 @@ export async function PUT(request) {
   return NextResponse.status(200).json({ message: "Appointment successfully updated" });
 }
 
+export default function handler(req, res) {
+  const body = req.body;
+  console.log(body)
 
-
-
-
-
-
-
-
-
+  res.status(200).json({ bodyEmail: body?.email })
+}

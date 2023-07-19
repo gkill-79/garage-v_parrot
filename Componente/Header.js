@@ -2,7 +2,7 @@
 
 
 // src/components/Header.js
-import Link from 'next/link' // Changer de react-router-dom à next/link&
+import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Componentes/Header.module.css'
 
@@ -19,7 +19,7 @@ function Header() {
                     <Image src="/path-to-phone-icon.png" alt="Téléphone" width={30} height={30} />
                     <span>+33 1 23 45 67 89</span>
                     <Image src="/path-to-user-icon.png" alt="Connexion" width={30} height={30} />
-                        <Link href="/Home/Register" legacyBehavior>
+                        <Link href="/Admin" legacyBehavior>
                         <a className={styles.card}>
                             <h2>Se connecter</h2>
                             <p>Accédez à votre compte.</p>
@@ -33,7 +33,7 @@ function Header() {
                     <li><a href="/Home/Occasion">Occasion</a></li>
                     <li><a href="/Home/Entretien">Entretien</a></li>
                     <li><a href="/Home/Services">Services</a></li>
-                    <li><a href="/bon-plan">Bon Plan</a></li>
+                    <li><a href="/Home/RDV">Prendre RDV</a></li>
                 </ul>
             </nav>
         </header>

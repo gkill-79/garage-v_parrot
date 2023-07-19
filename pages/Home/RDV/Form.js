@@ -1,8 +1,8 @@
 // pages/Home/AppointmentForm.js
 import React, { useState } from 'react';
-import styles from '../styles/Home/AppointmentForm.module.css';
+import styles from '../../../styles/Home/AppointmentForm.module.css';
 
-const AppointmentForm = () => {
+const RdvForm = () => {
   const handleSubmit = async (event) => {  // 1. Ajoutez "async" ici pour pouvoir utiliser "await" dans la fonction.
     event.preventDefault();
     const { firstname, lastname, email, phone, message, date, time, repairType } = event.target.elements;
@@ -117,5 +117,4 @@ const AppointmentForm = () => {
   );
 };
 
-export default AppointmentForm;
-
+export default RdvForm;

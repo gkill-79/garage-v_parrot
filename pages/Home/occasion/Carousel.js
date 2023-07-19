@@ -1,8 +1,6 @@
 
 
 
-
-
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import EncadreService from '../Services/EncadreService';
@@ -32,11 +30,11 @@ const Carousel = ({ items }) => {
           className={styles['carousel-slide']} 
         />
         {/* Left Arrow */}
-        <div className={styles['carousel-arrow']}{['carousel-arrow-left']}>
+        <div className={`${styles['carousel-arrow']} ${styles['carousel-arrow-left']}`}>
           <BsChevronCompactLeft onClick={prevSlide} size={30} />
         </div>
         {/* Right Arrow */}
-        <div className={styles['carousel-arrow']}{['carousel-arrow-right']}>
+        <div className={`${styles['carousel-arrow']} ${styles['carousel-arrow-right']}`}>
           <BsChevronCompactRight onClick={nextSlide} size={30} />
         </div>
       </div>
@@ -44,6 +42,7 @@ const Carousel = ({ items }) => {
 };
   
 export default Carousel;
+
 
 
 

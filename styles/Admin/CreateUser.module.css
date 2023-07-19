@@ -1,0 +1,58 @@
+
+
+.createUserContainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.createUserForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.createUserForm label {
+    font-weight: bold;
+}
+
+.createUserForm input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.createUserForm button {
+    padding: 10px 20px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.createUserForm button:hover {
+    background-color: #0051c9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
