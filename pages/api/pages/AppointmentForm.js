@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 
 // export async function DELETE(request) {
 //   const { id } = request.params;
@@ -37,34 +37,25 @@ import { NextResponse } from "next/server";
 //   return NextResponse.status(200).json({ message: "Appointment successfully updated" });
 // }
 
-
-// pages/api/AppointmentForm.js
-export async function POST(request) {
-  const { body } = request;
-  const { firstname, lastname, email, phone, message, date } = body;
-
-  const appointmentRepository = getRepository(Appointment);
-
-  const appointment = new Appointment();
-  appointment.firstname = firstname;
-  appointment.lastname = lastname;
-  appointment.email = email;
-  appointment.phone = phone;
-  appointment.message = message;
-  appointment.date = date;
-
-  await appointmentRepository.save(appointment);
-
-  return NextResponse.redirect("/agenda");
-}
-
-
 // export default function handler(req, res) {
 //   const body = req.body;
 //   console.log(body)
 
-//   res.status(200).json({ name: 'john Doe' })
+//   res.status(200).json({ bodyEmail: body?.email })
 // }
+
+
+export default function handler(req, res) {
+  // const body = req.body;
+  // console.log(body)
+
+  res.status(200).json({ name: 'john Doe' })
+}
+
+
+
+
+
 
 
 

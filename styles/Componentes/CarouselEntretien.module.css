@@ -1,61 +1,62 @@
 
-
-
-
-
 .carousel-container {
     position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .card {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    padding-top: 5rem;
-}
-
-.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .card-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 1rem 4rem 1rem;
-}
-
-.button {
-    background-color: #1abc9c;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.carousel-arrow {
+  }
+  
+  .carousel-arrow {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
     cursor: pointer;
-}
-
-.carousel-arrow-left {
-    left: 10px;
-}
-
-.carousel-arrow-right {
-    right: 10px;
-}
-
-
-
-
-
-
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .carousel-arrow-left {
+    left: -50px;
+  }
+  
+  .carousel-arrow-right {
+    right: -50px;
+  }
+  
+  .button {
+    background: #f90;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background: #c60;
+  }
+  
 
 
 

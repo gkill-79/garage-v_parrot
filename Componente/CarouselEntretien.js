@@ -1,53 +1,61 @@
 
-
-import React, { useState } from 'react';
+// componentes/CarouselEntretien.js 
+import React, { useState, useEffect } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import styles from '../styles/Componentes/CarouselEntretien.module.css';
 
 const CarouselEntretien = ({ items }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-  
-    const prevSlide = () => {
-        const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? items.length - 1 : currentIndex - 1;
-        setCurrentIndex(newIndex);
-    };
-  
-    const nextSlide = () => {
-        const isLastSlide = currentIndex === items.length - 1;
-        const newIndex = isLastSlide ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex);
-    };
-  
-    return (
-        <div className={styles['carousel-container']}>
-            <div className={styles.card}>
-                <img 
-                    src={items[currentIndex].image} 
-                    alt={items[currentIndex].title} 
-                    width={398}
-                    height={380}
-                />
-                <div className={styles['card-content']}>
-                    <h4>{items[currentIndex].title}</h4>
-                    <p>{items[currentIndex].description}</p>
-                    <button className={styles.button}>JE PRENDS RDV</button>
-                </div>
-            </div>
+  if (!items || items.length === 0) {
+    return null;
+  }
 
-            <div className={`${styles['carousel-arrow']} ${styles['carousel-arrow-left']}`}>
-                <BsChevronCompactLeft onClick={prevSlide} size={30} />
-            </div>
-            <div className={`${styles['carousel-arrow']} ${styles['carousel-arrow-right']}`}>
-                <BsChevronCompactRight onClick={nextSlide} size={30} />
-            </div>
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex(oldIndex => oldIndex === items.length - 1 ? 0 : oldIndex + 1);
+    }, 2000);
+
+    return () => clearInterval(timer);
+  }, [items]);
+
+  const prevSlide = () => {
+    setCurrentIndex(oldIndex => oldIndex === 0 ? items.length - 1 : oldIndex - 1);
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex(oldIndex => oldIndex === items.length - 1 ? 0 : oldIndex + 1);
+  };
+
+  const currentItem = items[currentIndex];
+
+  return (
+    <div className={styles['carousel-container']}>
+      <div className={styles.card}>
+        <h4>{currentItem.title}</h4>
+        <img 
+          src={currentItem.image} 
+          alt={currentItem.title} 
+          width={398}
+          height={380}
+        />
+        <div className={styles['card-content']}>
+          <p>{currentItem.price}</p>
+          <p>{currentItem.description}</p>
+          <button className={styles.button}>JE PRENDS RDV</button>
         </div>
-    );
+      </div>
+      <div className={`${styles['carousel-arrow']} ${styles['carousel-arrow-left']}`}>
+        <BsChevronCompactLeft onClick={prevSlide} size={30} />
+      </div>
+      <div className={`${styles['carousel-arrow']} ${styles['carousel-arrow-right']}`}>
+        <BsChevronCompactRight onClick={nextSlide} size={30} />
+      </div>
+    </div>
+  );
 };
 
 export default CarouselEntretien;
-
-
 
 
 

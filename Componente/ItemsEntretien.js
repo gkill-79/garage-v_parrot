@@ -1,12 +1,7 @@
 
-// pages/Home/Entretien/index.js
-import React from 'react';
-import Header from '../../../Componente/Header';
-import Footer from '../../../Componente/Footer';
-import CarouselEntretien from '../../../Componente/CarouselEntretien';
 
-const EntretienPage = () => {
-  
+
+
 
 const items = [
     {
@@ -49,7 +44,7 @@ const items = [
         title: "Suspensions-Amortisseurs",
         description: "Évitez d’abîmer votre voiture à chaque secousse ! Grâce aux amortisseurs, vous bénéficiez d'un meilleur confort et vos essieux subissent moins les cahots...",
         price: "à partir de 140,00€",
-        image: "/images/CarouselEntretien/suspensions_amortisseurs.avif"
+        image: "/images/CarouselEntretien/suspentions_amortisseurs.avif"
     },
     {
         id: 7,
@@ -98,11 +93,11 @@ const items = [
         title: "Démarrage et charge-Batterie",
         description: "La batterie, l'alternateur et le démarreur de votre voiture fonctionnent de concert. Sans courant électrique, pas de système électronique et pas de démarrage de...",
         price: "à partir de 79,00€",
-        image: "/images/CarouselEntretien/battterie.avif"
+        image: "/images/CarouselEntretien/batterie.avif"
     },
     {
         id: 14,
-        title: "Réparation plastique auto",
+        title: "Réparation plastique",
         description: "Vos coques de rétroviseurs de voiture sont abîmées ou rayées. Les garages AD vous proposent la rénovation d’une ou deux coques de rétroviseur. Votre voiture...",
         price: "à partir de 48,00€",
         image: "/images/CarouselEntretien/reparation_plastique.avif"
@@ -112,7 +107,7 @@ const items = [
         title: "Rénovation carrosserie",
         description: "Vous souhaitez donner un coup de jeune à votre véhicule ? Vous aimeriez effacer les traces de coups apparues au fil des mois et des années ? Passez chez un réparateur AD pour sa rénovation.",
         price: "à partir de 159,00€",
-        image: "/images/CarouselEntretien/renovation_carosserie.avif"
+        image: "/images/CarouselEntretien/renovation_carrosserie.avif"
     },
     {
         id: 16,
@@ -133,7 +128,7 @@ const items = [
         title: "Pré-contrôle technique",
         description: "Avant de vous présenter au contrôle technique, prenez rendez-vous chez AD pour un pré-contrôle technique. De cette façon, vous saurez à l'avance ce qui pourrait ne pas passer...",
         price: "à partir de 15,00€",
-        image: "/images/CarouselEntretien/pre_controle_technique.avif"
+        image: "/images/CarouselEntretien/Pre_contrôle_technique.avif"
     },
     {
         id: 19,
@@ -157,14 +152,3 @@ const items = [
         image: "/images/CarouselEntretien/vitrage_et_pare_brise.avif"
     }
 ];
-
-  return (
-    <div>
-      <Header />
-      <CarouselEntretien items={items} />
-      <Footer />
-    </div>
-  );
-}
-
-export default EntretienPage;

@@ -1,6 +1,6 @@
 
 
-
+// pages\Home\Services\Carousel.js
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import EncadreService from '../Services/EncadreService';

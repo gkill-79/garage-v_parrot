@@ -1,15 +1,22 @@
-
-
 .createUserContainer {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
 }
 
 .createUserForm {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
 }
 
 .createUserForm label {
@@ -30,12 +37,18 @@
     border-radius: 4px;
     cursor: pointer;
     margin-top: 20px;
+    align-self: center;
 }
 
 .createUserForm button:hover {
     background-color: #0051c9;
 }
 
+.manageCarsLink {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
 
 
 

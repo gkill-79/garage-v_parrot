@@ -1,3 +1,5 @@
+
+
 // pages/Home/AppointmentForm.js
 import React, { useState } from 'react';
 import styles from '../../../styles/Home/AppointmentForm.module.css';
@@ -118,3 +120,20 @@ const RdvForm = () => {
 };
 
 export default RdvForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

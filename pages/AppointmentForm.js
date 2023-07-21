@@ -13,8 +13,8 @@ const AppointmentForm = () => {
       phone: phone.value,
       message: message.value,
       date: date.value,
-      time: time.value,
-      repairType: repairType.value,
+      // time: time.value,
+      // repairType: repairType.value,
     };
     console.log(appointment);
 
@@ -90,7 +90,7 @@ const AppointmentForm = () => {
                             name="date"
                             required
                         />
-                        <label className={styles.label} htmlFor="time">Heure :</label>
+                        {/* <label className={styles.label} htmlFor="time">Heure :</label>
                         <input
                             className={styles.input}
                             type="time"
@@ -105,7 +105,7 @@ const AppointmentForm = () => {
                             id="repairType"
                             name="repairType"
                             required
-                        />
+                        /> */}
                     </div>
                 </div>
                 <div className={styles.submitButton}>
