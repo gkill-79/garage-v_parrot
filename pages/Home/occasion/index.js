@@ -1,32 +1,34 @@
+// pages/Home/Occasion/index.js
 
-
-
-// pages/Home/Occasion/CarPage.js
 import { useState, useEffect } from 'react';
 import CarCard from '../../../Componente/CarCard';  
 import Header from '../../../Componente/Header';
 import Footer from '../../../Componente/Footer';
 import styles from '../../../styles/Home/Occasion/CarPage.module.css';
-import { cars } from './Cars';  
+import { CarData } from './CarData';  // Assurez-vous que le chemin est correct
 
-const CarPage = () => {
+
+const CarPage = () => {  // Removed { cars } from here
   const [selectedCar, setSelectedCar] = useState(null);
+  const cars = CarData ?? [];
 
   useEffect(() => {
-    const changeCar = () => {
-      const randomIndex = Math.floor(Math.random() * cars.length);
-      setSelectedCar(cars[randomIndex]);
+    if (cars && cars.length > 0) {
+      const changeCar = () => {
+        const randomIndex = Math.floor(Math.random() * cars.length);
+        setSelectedCar(cars[randomIndex]);
+      }
+
+      // Changer de voiture immédiatement au chargement de la page
+      changeCar();
+
+      // Puis changer de voiture toutes les 3 secondes
+      const intervalId = setInterval(changeCar, 3000);
+
+      // Nettoyer l'intervalle quand le composant est démonté
+      return () => clearInterval(intervalId);
     }
-
-    // Changer de voiture immédiatement au chargement de la page
-    changeCar();
-
-    // Puis changer de voiture toutes les 3 secondes
-    const intervalId = setInterval(changeCar, 3000);
-
-    // Nettoyer l'intervalle quand le composant est démonté
-    return () => clearInterval(intervalId);
-  }, []);
+  }, [cars]); 
 
   if (!selectedCar) {
     return null;
@@ -44,7 +46,6 @@ const CarPage = () => {
 };
 
 export default CarPage;
-
 
 
 

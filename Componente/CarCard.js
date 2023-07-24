@@ -1,10 +1,9 @@
 
 
-
-// pages/Home/Occasion/CarCard.js
+// Componente/CarCard.js
 import styles from '../styles/Componentes/CarCard.module.css';
 
-const CarCard = ({ car }) => {  // Changement de "cars" à "car"
+const CarCard = ({ car }) => {  
   if (!car) {
     return null;
   }
@@ -14,7 +13,7 @@ const CarCard = ({ car }) => {  // Changement de "cars" à "car"
   return (
     <div className={styles.pageContainer}>
       <div className={styles.imageContainer}>
-        <img src={imageUrl} alt={`Car ${car.id}`} className={styles.carImage} />
+        <img src={imageUrl} alt={`Voiture ${car.id}`} className={styles.carImage} />
       </div>
       <div className={styles.infoContainer}>
         <h1 className={styles.title}>Détails du véhicule</h1>
@@ -27,6 +26,7 @@ const CarCard = ({ car }) => {  // Changement de "cars" à "car"
 };
 
 export default CarCard;
+
 
 
 

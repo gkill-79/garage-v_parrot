@@ -8,11 +8,6 @@ import Footer from '../../../Componente/Footer';
 import RdvForm from './Form';
 import styles from '../../../styles/Home/Prendre_RDV/PrendreRDV.module.css';
 
-
-
-
-
-
 const PrendreRDV = () => {
 
 

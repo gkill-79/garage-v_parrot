@@ -1,0 +1,77 @@
+
+
+/* styles/Home/Messages/LeaveComment.module.css */
+.container {
+    padding: 3rem 0;
+}
+
+.content-box {
+    border: 1px solid #282725;
+    padding: 1rem 6rem;
+    margin: 2rem 8rem;
+    background-color: #FFEEBB;
+}
+
+.title, .card-container h2 {
+    text-align: center;
+    margin: 2rem 0;
+    color: #282725; 
+    font-size: 2rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #282725;  /* Pour créer l'encadrement */
+    background-color: #282725;
+    color: white;
+}
+
+.card-container:last-child {
+    justify-content: center;
+}
+
+.card-container p {
+    width: calc(33.33% - 2rem);
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    color: #282725;
+}
+
+/* Pour les petits écrans */
+@media screen and (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+    }
+
+    .card-container p {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

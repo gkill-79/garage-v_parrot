@@ -3,7 +3,7 @@
 
 
 
-const items = [
+const services = [
     {
         id: 1,
         title: "Entretien et vidange",
@@ -152,3 +152,17 @@ const items = [
         image: "/images/CarouselEntretien/vitrage_et_pare_brise.avif"
     }
 ];
+
+export default services;
+
+
+
+
+
+
+
+
+
+
+
+

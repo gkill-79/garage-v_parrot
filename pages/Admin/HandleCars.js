@@ -1,65 +1,85 @@
-// pages/Admin/HandleCars.js
-import { useState } from 'react';
-import { cars } from '../Home/Occasion/Cars';
-import styles from '../../styles/Admin/HandleCars.module.css';
+// components/HandleCars/index.js
+import React, { useState, useEffect } from 'react';
+import styles from '../../styles/Admin/HandleCars.module.css'
 import Header from '../../Componente/Header';
 import Footer from '../../Componente/Footer';
+import Link from 'next/link';
 
-const HandleCars = () => {
-  const [selectedCar, setSelectedCar] = useState(cars[0]);
-  const [updatedCar, setUpdatedCar] = useState(selectedCar);
+const HandleCars = ({ cars, setCars }) => {
+  const [id, setId] = useState(null);
+  const [price, setPrice] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+  const [year, setYear] = useState('');
+  const [mileage, setMileage] = useState('');
 
-  const handleCarSelect = (event) => {
-    const selectedCar = cars.find(car => car.id === parseInt(event.target.value));
-    setSelectedCar(selectedCar);
-    setUpdatedCar(selectedCar);
+  const resetForm = () => {
+    setId(null);
+    setPrice('');
+    setImageUrl('');
+    setYear('');
+    setMileage('');
   };
 
-  const handleInputChange = (event) => {
-    setUpdatedCar({
-      ...updatedCar,
-      [event.target.name]: event.target.value
-    });
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const carData = { id: id || Date.now(), price, imageUrl, year, mileage };
+    const updatedCars = id ? cars.map(car => car.id === id ? carData : car) : [...cars, carData];
+    setCars(updatedCars);
+    alert(id ? 'Voiture mise à jour avec succès !' : 'Voiture ajoutée avec succès !');
+    resetForm();
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const onDelete = (id) => {
+    setCars(cars.filter((car) => car.id !== id));
+    alert('Voiture supprimée avec succès !');
+  };
 
-    // Here you would normally update the car data on the server
-    // For simplicity, we just log the data to the console
-    console.log(updatedCar);
+  const onEdit = (car) => {
+    setId(car.id);
+    setPrice(car.price);
+    setImageUrl(car.imageUrl);
+    setYear(car.year);
+    setMileage(car.mileage);
   };
 
   return (
     <div>
-      <Header />
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <select value={selectedCar.id} onChange={handleCarSelect} className={styles.select}>
-          {cars.map(car => (
-            <option key={car.id} value={car.id}>Voiture {car.id}</option>
-          ))}
-        </select>
-        <label>
-          Prix :
-          <input type="number" name="price" value={updatedCar.price} onChange={handleInputChange} className={styles.input} />
-        </label>
-        <label>
-          URL de l'image :
-          <input type="text" name="imageUrl" value={updatedCar.imageUrl} onChange={handleInputChange} className={styles.input} />
-        </label>
-        <label>
-          Année :
-          <input type="number" name="year" value={updatedCar.year} onChange={handleInputChange} className={styles.input} />
-        </label>
-        <label>
-          Kilométrage :
-          <input type="number" name="mileage" value={updatedCar.mileage} onChange={handleInputChange} className={styles.input} />
-        </label>
-        <button type="submit" className={styles.button}>Mettre à jour</button>
-      </form>
+        <Header />
+        <Link href="/Admin" className={styles.adminButton}>Espace Administration</Link>
+        <div className={styles.handleCarsContainer}>
+            <h1 className={styles.title}>{id ? 'Modifier une voiture' : 'Ajouter une voiture'}</h1>
+            <form className={styles.handleCarsForm} onSubmit={onSubmit}>
+            <label htmlFor="price">Prix :</label>
+            <input type="text" id="price" value={price} onChange={e => setPrice(e.target.value)} />
+
+            <label htmlFor="imageUrl">URL de l'image :</label>
+            <input type="text" id="imageUrl" value={imageUrl} onChange={e => setImageUrl(e.target.value)} />
+
+            <label htmlFor="year">Année :</label>
+            <input type="text" id="year" value={year} onChange={e => setYear(e.target.value)} />
+
+            <label htmlFor="mileage">Kilométrage :</label>
+            <input type="text" id="mileage" value={mileage} onChange={e => setMileage(e.target.value)} />
+
+            <button type="submit" className={styles.submitButton}>
+                {id ? 'Mettre à jour la voiture' : 'Ajouter la voiture'}
+            </button>
+            </form>
+            {cars && cars.length > 0 && cars.map((car) => (
+            <div key={car.id} className={styles.carCard}>
+                <h2>Prix : {car.price}</h2>
+                <p>Année : {car.year}</p>
+                <p>Kilométrage : {car.mileage}</p>
+                <img src={car.imageUrl} alt="Voiture"/>
+                <button onClick={() => onEdit(car)} className={styles.editButton}>Modifier</button>
+                <button onClick={() => onDelete(car.id)} className={styles.deleteButton}>Supprimer</button>
+            </div>
+            ))}
+        </div>
       <Footer />
     </div>
   );
 };
 
 export default HandleCars;
+

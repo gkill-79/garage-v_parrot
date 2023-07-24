@@ -40,6 +40,9 @@ const CreateUser = () => {
     return (
         <div>
             <Header />
+            <Link href="/Admin/SpaceAdmin"> {/* Lien vers l'espace administrateur ici */}
+                <a className={styles.adminButton}>Espace Administrateur</a>
+            </Link>
             <div className={styles.createUserContainer}>
                 <h1 className={styles.title}>Créer un compte utilisateur</h1>
                 <form className={styles.createUserForm} onSubmit={handleSubmit}>
@@ -68,6 +71,7 @@ const CreateUser = () => {
 }
 
 export default CreateUser;
+
 
 
 

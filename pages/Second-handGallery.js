@@ -49,21 +49,21 @@
 
 
 
-
-
-
 // pages/Second-handGallery.js
 import React from 'react';
 import CarCard from '../Componente/CarCard';
 import styles from '../styles/Home/Second-handGallery.module.css'
-import { cars } from './Home/Occasion/Cars';
+import { CarData } from './Home/Occasion/CarData';  // Assurez-vous que le chemin est correct
 
 const SecondHandGallery = () => {
+    // Protection supplémentaire pour éviter les erreurs si 'CarData' est 'undefined' ou 'null'
+    const cars = CarData ?? [];
+
     return (
       <div className={styles.CarContainer1}>
         <h2 className={styles.title}>Nos occasions</h2>
         <div className={styles.CarContainer}>
-            {cars.slice(0, 3).map(car => (  // Prenez les 3 premières voitures
+            {cars.slice(0, 3).map(car => (
                 <CarCard key={car.id} car={car} />
             ))}
         </div>
@@ -72,6 +72,7 @@ const SecondHandGallery = () => {
 };
 
 export default SecondHandGallery;
+
 
 
 

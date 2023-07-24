@@ -3,7 +3,7 @@
 
 // pages/index.js
 import Head from 'next/head'
-import Entretien from './Entretien'
+// import Entretien from './Entretien'
 import Footer from '../Componente/Footer'
 import Header from '../Componente/Header'
 import AppointmentForm from './AppointmentForm'
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <title>Garage V-Parrot</title>
       </Head>
       <Header />
-      <Entretien />
+      {/* <Entretien /> */}
       <SomeComponent />
       <AppointmentForm />
       {children}

@@ -1,49 +1,41 @@
-
-
-
-/* Footer.module.css */
+/* styles/Componentes/Footer.module.css */
 
 .footer {
-    background-color: #343a40;
+    width: 100%;
+    background-color: #333;
     color: #fff;
-    font-size: 14px;
-    padding: 60px 0 20px;
-}
-
-.footer-center {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 20px;
-    background-color: #f8f9fa;
-    color: #343a40;
-}
-
-.footer-content .footer-left {
-    margin-left: 15rem;
-}
-
-.footer-content .footer-right {
-    margin-right: 12rem;
-}
-
-.footer-content .footer-right ul {
-    list-style: none;
+  }
+  
+  .footer-center {
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .footer-left,
+  .footer-right {
+    width: 45%;
+  }
+  
+  .footer-right {
+    text-align: right;
+  }
+  
+  .footer-list {
+    list-style-type: none;
     padding: 0;
-}
-
-.footer-content .footer-right ul li a {
-    color: #343a40;
+  }
+  
+  .footer-list-item a {
+    color: #fff;
     text-decoration: none;
-}
-
-
-
+  }
+  
 
 
 
