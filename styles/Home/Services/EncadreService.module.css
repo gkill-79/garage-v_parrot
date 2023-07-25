@@ -1,4 +1,3 @@
-
 /* styles/Home/Services/EncadreService.module.css */
 /* stylelint-disable selector-list-comma-newline-after */
 .encadre {
@@ -7,6 +6,10 @@
   margin-bottom: 20px;
   text-align: center;
   background-color: #FFEEBB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .encadreService {
@@ -14,7 +17,6 @@
   flex-direction: column;
   align-items: center;
 }
-
 
 .image {
   width: 100%;
@@ -27,7 +29,6 @@
   width: 50%;
   max-width: 300px;
 }
-
 
 .content {
   padding-top: 20px;
@@ -42,17 +43,21 @@
   margin: 20px 0;
 }
 
-.button {
-  background-color: red;
+.btn {
+  display: block;
+  width: 20%;
+  padding: 10px;
+  background-color: #0070f3;
   color: white;
-  padding: 10px 20px;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
-  text-transform: uppercase;
+  margin-top: 20px;
 }
 
-
-
+.carousel-hidden {
+  display: none;
+}
 
 
 

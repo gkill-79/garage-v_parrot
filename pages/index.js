@@ -3,11 +3,11 @@
 
 // pages/index.js
 import Head from 'next/head'
-// import Entretien from './Entretien'
+import Entretien from './Entretien'
 import Footer from '../Componente/Footer'
 import Header from '../Componente/Header'
 import AppointmentForm from './AppointmentForm'
-import SomeComponent from './Second-handGallery'
+import SecondHandGallery from './SecondHandGallery'
 
 export const metadata = {
   title: 'Create Next App',
@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
         <title>Garage V-Parrot</title>
       </Head>
       <Header />
-      {/* <Entretien /> */}
-      <SomeComponent />
+      <Entretien />
+      <SecondHandGallery />
       <AppointmentForm />
       {children}
       <Footer />

@@ -1,62 +1,39 @@
-
+/* styles/Componentes/CarouselEntretien.module.css */
 .carousel-container {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-  }
-  
-  .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin: 20px 0;
-  }
-  
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #fff;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .carousel-arrow-left {
-    left: -50px;
-  }
-  
-  .carousel-arrow-right {
-    right: -50px;
-  }
-  
-  .button {
-    background: #f90;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .button:hover {
-    background: #c60;
-  }
-  
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.carousel-visible {
+  display: block;
+}
+
+.carousel-hidden {
+  display: none;
+}
+
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.carousel-arrow-left {
+  left: -50px;
+}
+
+.carousel-arrow-right {
+  right: -50px;
+}
+
 
 
 

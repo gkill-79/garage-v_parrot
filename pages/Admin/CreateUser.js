@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/Admin/CreateUser.module.css';
-import Header from '../../componente/Header';
-import Footer from '../../componente/Footer';
+import Header from '../../Componente/Header';
+import Footer from '../../Componente/Footer';
 
 const CreateUser = () => {
     const [firstName, setFirstName] = useState('');

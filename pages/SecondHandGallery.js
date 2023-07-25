@@ -52,11 +52,11 @@
 // pages/Second-handGallery.js
 import React from 'react';
 import CarCard from '../Componente/CarCard';
-import styles from '../styles/Home/Second-handGallery.module.css'
-import { CarData } from './Home/Occasion/CarData';  // Assurez-vous que le chemin est correct
+import styles from '../styles/Home/SecondHandGallery.module.css'
+import { CarData } from './Home/Occasion/CarData';
 
 const SecondHandGallery = () => {
-    // Protection supplémentaire pour éviter les erreurs si 'CarData' est 'undefined' ou 'null'
+   
     const cars = CarData ?? [];
 
     return (

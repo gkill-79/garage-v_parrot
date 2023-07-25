@@ -1,7 +1,5 @@
-
-
-
 // pages/Employee/EmployeeSpace.js
+
 import Link from 'next/link';
 import styles from '../../styles/Admin/SpaceUsed.module.css';
 import Header from '../../Componente/Header';
@@ -13,6 +11,7 @@ const SpaceUsed = () => {
             <Header />
             <div className={styles.container}>
                 <h1 className={styles.title}>L'Espace Employé</h1>
+                <Link href="/Admin" className={styles.employeeButton}>Espace Administration</Link>
                 <ul className={styles.list}>
                     <li className={styles.item}>
                         <Link href="/Admin/ModerateVisitorMessages" className={styles.link} passHref>

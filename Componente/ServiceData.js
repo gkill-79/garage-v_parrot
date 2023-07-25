@@ -93,7 +93,7 @@ const services = [
         title: "Démarrage et charge-Batterie",
         description: "La batterie, l'alternateur et le démarreur de votre voiture fonctionnent de concert. Sans courant électrique, pas de système électronique et pas de démarrage de...",
         price: "à partir de 79,00€",
-        image: "/images/CarouselEntretien/batterie.avif"
+        image: "/images/CarouselEntretien/battterie.avif"
     },
     {
         id: 14,
@@ -107,7 +107,7 @@ const services = [
         title: "Rénovation carrosserie",
         description: "Vous souhaitez donner un coup de jeune à votre véhicule ? Vous aimeriez effacer les traces de coups apparues au fil des mois et des années ? Passez chez un réparateur AD pour sa rénovation.",
         price: "à partir de 159,00€",
-        image: "/images/CarouselEntretien/renovation_carrosserie.avif"
+        image: "/images/CarouselEntretien/renovation_carosserie.avif"
     },
     {
         id: 16,
@@ -128,7 +128,7 @@ const services = [
         title: "Pré-contrôle technique",
         description: "Avant de vous présenter au contrôle technique, prenez rendez-vous chez AD pour un pré-contrôle technique. De cette façon, vous saurez à l'avance ce qui pourrait ne pas passer...",
         price: "à partir de 15,00€",
-        image: "/images/CarouselEntretien/Pre_contrôle_technique.avif"
+        image: "/images/CarouselEntretien/Pre_controle_technique.avif"
     },
     {
         id: 19,

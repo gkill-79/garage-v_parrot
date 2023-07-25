@@ -1,0 +1,70 @@
+
+
+
+/* Dropzone.module.css */
+
+.dropzoneContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+  
+  .fileInput {
+    display: none;
+  }
+  
+  .uploadIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: currentColor;
+  }
+  
+  .uploadButton {
+    background-color: #db2777;
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  
+  .removeButton {
+    background-color: #fe8181;
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  
+    .fileList {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

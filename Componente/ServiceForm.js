@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styles from '../styles/Componentes/ServiceForm.module.css';
 import { useRouter } from 'next/router';
+import Dropzone from './Dropzone';
 
 const ServiceForm = ({ services, setServices }) => {
   const [service, setService] = useState({
@@ -98,6 +99,7 @@ const ServiceForm = ({ services, setServices }) => {
           placeholder="URL de l'image du service"
           required
         />
+        <Dropzone />
         <button type="submit" className={styles.button}>Ajouter un service</button>
       </form>
       <div>

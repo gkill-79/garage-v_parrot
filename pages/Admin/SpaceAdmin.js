@@ -10,6 +10,7 @@ const Administrateur = () => {
             <Header />
             <div className={styles.container}>
                 <h1 className={styles.title}>L'Espace Administrateur</h1>
+                <Link href="/Admin" className={styles.adminButton}>Espace Administration</Link>
                 <ul className={styles.list}>
                     <li className={styles.item}>
                         <Link href="/Admin/CreateUser" className={styles.link} passHref>
