@@ -6,7 +6,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.0.18",
+    "@mui/material": "^5.14.2",
     "next": "latest",
     "next-google-fonts": "^2.2.0",
     "react": "18.2.0",

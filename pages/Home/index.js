@@ -4,7 +4,7 @@ import Entretien from '../Entretien'
 import Footer from '../../Componente/Footer'
 import Header from '../../Componente/Header'
 import AppointmentForm from '../AppointmentForm'
-import SomeComponent from '../Second-handGallery'
+import SomeComponent from '../SecondHandGallery'
 
 export const metadata = {
   title: 'Create Next App',
