@@ -5,10 +5,10 @@ import CarCard from '../../../Componente/CarCard';
 import Header from '../../../Componente/Header';
 import Footer from '../../../Componente/Footer';
 import styles from '../../../styles/Home/Occasion/CarPage.module.css';
-import { CarData } from './CarData';  // Assurez-vous que le chemin est correct
+import { CarData } from './CarData';
 
 
-const CarPage = () => {  // Removed { cars } from here
+const CarPage = () => {
   const [selectedCar, setSelectedCar] = useState(null);
   const cars = CarData ?? [];
 
