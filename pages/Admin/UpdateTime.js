@@ -23,10 +23,23 @@ const UpdateTime = () => {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Ici, tu peux gérer l'envoi des nouvelles horaires au backend
-    console.log(horaires);
+    
+    const response = await fetch('/api/pages/UpdateTime', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(horaires),
+    });
+
+    if (response.ok) {
+      console.log('Succès:', await response.json());
+      alert('Les horaires ont bien été mis à jour !');
+    } else {
+      console.error('Erreur:', await response.json());
+    }
   };
 
   return (
