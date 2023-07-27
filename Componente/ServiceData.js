@@ -44,7 +44,7 @@ const services = [
         title: "Suspensions-Amortisseurs",
         description: "Évitez d’abîmer votre voiture à chaque secousse ! Grâce aux amortisseurs, vous bénéficiez d'un meilleur confort et vos essieux subissent moins les cahots...",
         price: "à partir de 140,00€",
-        image: "/images/CarouselEntretien/suspentions_amortisseurs.avif"
+        image: "/images/CarouselEntretien/suspensions_amortisseurs.avif"
     },
     {
         id: 7,

@@ -1,36 +1,39 @@
 
 
 // pages/Home/AppointmentForm.js
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../../../styles/Home/AppointmentForm.module.css';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+const schema = yup.object().shape({
+  firstname: yup.string().required(),
+  lastname: yup.string().required(),
+  email: yup.string().email().required(),
+  phone: yup.string().required(),
+  message: yup.string().required(),
+  date: yup.date().required(),
+  time: yup.string().required(),
+});
 
 const RdvForm = () => {
-  const handleSubmit = async (event) => {  // 1. Ajoutez "async" ici pour pouvoir utiliser "await" dans la fonction.
-    event.preventDefault();
-    const { firstname, lastname, email, phone, message, date, time, repairType } = event.target.elements;
-    const appointment = {
-      firstname: firstname.value,
-      lastname: lastname.value,
-      email: email.value,
-      phone: phone.value,
-      message: message.value,
-      date: date.value,
-      time: time.value,
-      repairType: repairType.value,
-    };
+  const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
+  
+  const onSubmit = async (appointment) => {
     console.log(appointment);
-
-    // 2. Déplacez le bloc de requête fetch dans cette fonction pour l'exécuter lors de la soumission du formulaire.
-    const response = await fetch('/api/AppointmentForm', {
+    const response = await fetch('/api/pages/AppointmentForm', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(appointment),
     });
+    
 
     if (response.ok) {
       console.log('Succès:', await response.json());
+      alert('Votre rendez-vous a bien été pris en compte !');
     } else {
       console.error('Erreur:', await response.json());
     }
@@ -41,7 +44,7 @@ const RdvForm = () => {
         <h2 className={styles.header}>Réparation mécaniques et carrosseries</h2> 
         <div className={styles.formContainer}>
             <h3 className={styles.title}>Prise de rendez-vous</h3>
-            <form className={styles.form} onSubmit={handleSubmit}>
+            <form className={styles.form} onSubmit={handleSubmit(onSubmit)} action='/AppointmentForm' method='post'>
                 <div className={styles.columns}>
                     <div className={styles.column}>
                         <label className={styles.label} htmlFor="firstname">Prénom :</label>
@@ -50,7 +53,7 @@ const RdvForm = () => {
                             type="text"
                             id="firstname"
                             name="firstname"
-                            required
+                            {...register("firstname")}
                         />
                         <label className={styles.label} htmlFor="lastname">Nom :</label>
                         <input
@@ -58,7 +61,7 @@ const RdvForm = () => {
                             type="text"
                             id="lastname"
                             name="lastname"
-                            required
+                            {...register("lastname")}
                         />
                         <label className={styles.label} htmlFor="email">Email :</label>
                         <input
@@ -66,7 +69,7 @@ const RdvForm = () => {
                             type="email"
                             id="email"
                             name="email"
-                            required
+                            {...register("email")}
                         />
                         <label className={styles.label} htmlFor="phone">Téléphone :</label>
                         <input
@@ -74,7 +77,7 @@ const RdvForm = () => {
                             type="tel"
                             id="phone"
                             name="phone"
-                            required
+                            {...register("phone")}
                         />
                     </div>
                     <div className={styles.column}>
@@ -83,6 +86,7 @@ const RdvForm = () => {
                             className={styles.input}
                             id="message"
                             name="message"
+                            {...register("message")}
                         />
                         <label className={styles.label} htmlFor="date">Date :</label>
                         <input
@@ -90,7 +94,7 @@ const RdvForm = () => {
                             type="date"
                             id="date"
                             name="date"
-                            required
+                            {...register("date")}
                         />
                         <label className={styles.label} htmlFor="time">Heure :</label>
                         <input
@@ -98,16 +102,16 @@ const RdvForm = () => {
                             type="time"
                             id="time"
                             name="time"
-                            required
+                            {...register("time")}
                         />
-                        <label className={styles.label} htmlFor="repairType">Type de réparation :</label>
+                        {/* <label className={styles.label} htmlFor="repairType">Type de réparation :</label>
                         <input
                             className={styles.input}
                             type="text"
                             id="repairType"
                             name="repairType"
                             required
-                        />
+                        /> */}
                     </div>
                 </div>
                 <div className={styles.submitButton}>

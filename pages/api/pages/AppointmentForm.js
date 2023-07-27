@@ -1,69 +1,49 @@
-// import { NextResponse } from "next/server";
 
-// export async function DELETE(request) {
-//   const { id } = request.params;
-//   const appointmentRepository = getRepository(Appointment);
-
-//   const appointment = await appointmentRepository.findOne(id);
-
-//   if (!appointment) {
-//     return NextResponse.status(404).json({ message: "Appointment not found" });
-//   }
-
-//   await appointmentRepository.delete(id);
-  
-//   return NextResponse.status(200).json({ message: "Appointment successfully deleted" });
-// }
-
-// export async function PUT(request) {
-//   const { id } = request.params;
-//   const appointmentRepository = getRepository(Appointment);
-
-//   const appointment = await appointmentRepository.findOne(id);
-
-//   if (!appointment) {
-//     return NextResponse.status(404).json({ message: "Appointment not found" });
-//   }
-
-//   const { body } = request;
-//   const { date, time, description } = body;
-
-//   appointment.date = date;
-//   appointment.time = time;
-//   appointment.description = description;
-
-//   await appointmentRepository.save(appointment);
-
-//   return NextResponse.status(200).json({ message: "Appointment successfully updated" });
-// }
 
 // export default function handler(req, res) {
-//   const body = req.body;
-//   console.log(body)
+//   // const body = req.body;
+//   // console.log(body)
 
-//   res.status(200).json({ bodyEmail: body?.email })
+//   res.status(200).json({ name: 'john Doe' })
+// }
+
+// if (!appointment.firstName || !appointment.lastName || !appointment.email || !appointment.phone || !appointment.message || !appointment.date) {
+//   res.status(400).json({ message: 'All fields are required.' });
 // }
 
 
-export default function handler(req, res) {
-  // const body = req.body;
-  // console.log(body)
+// res.status(200).json({ message: 'Appointment created successfully.' });
 
-  res.status(200).json({ name: 'john Doe' })
+
+
+
+
+
+
+
+
+
+
+// pages/api/pages/AppointmentForm.js
+import { NextApiRequest, NextApiResponse } from 'next'
+
+export default async function handler(req, res) {
+  if (req.method === 'POST') {
+    const appointment = req.body;
+
+    if (!appointment.firstname || !appointment.lastname || !appointment.email || !appointment.phone || !appointment.message || !appointment.date || !appointment.time) {
+      res.status(400).json({ message: 'All fields are required.' });
+      return;
+    }
+
+    // Do something with appointment data here, e.g. store it in a database
+
+    res.status(200).json({ message: 'Appointment successfully created.' });
+    return;
+  }
+
+  res.status(405).json({ message: 'Method not allowed.' }); // Only POST method is allowed
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
