@@ -6,7 +6,7 @@ import Header from '../../Componente/Header';
 import Footer from '../../Componente/Footer';
 
 const UpdateTime = () => {
-  const [horaires, setHoraires] = useState({
+  const defaultHoraires = {
     lundi: 'Fermé',
     mardi: '9h00 - 12h30, 14h00 - 18h30',
     mercredi: '9h00 - 12h30, 14h00 - 18h30',
@@ -14,75 +14,62 @@ const UpdateTime = () => {
     vendredi: '9h00 - 12h30, 14h00 - 18h30',
     samedi: '9h00 - 12h30, 14h00 - 19h00',
     dimanche: 'Fermé',
-  });
+  };
+  
+  const [horaires, setHoraires] = useState(defaultHoraires);
 
-  const handleInputChange = (event) => {
-    setHoraires({
-      ...horaires,
-      [event.target.name]: event.target.value,
-    });
+  const handleInputChange = ({ target: { name, value }}) => {
+    setHoraires(prevHoraires => ({ ...prevHoraires, [name]: value }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
     const response = await fetch('/api/pages/UpdateTime', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(horaires),
     });
 
-    if (response.ok) {
-      console.log('Succès:', await response.json());
+    if(response.ok) {
+      const result = await response.json();
+      console.log('Succès:', result);
       alert('Les horaires ont bien été mis à jour !');
     } else {
-      console.error('Erreur:', await response.json());
+      console.error('Erreur lors de la mise à jour des horaires.');
     }
+  };
+
+  const renderForm = () => {
+    if(!defaultHoraires) {
+      return <div>Pas d'horaires à afficher</div>;
+    }
+
+    return Object.entries(defaultHoraires).map(([day,]) => (
+      <div key={day} className={styles.inputGroup}>
+        <label>{day.charAt(0).toUpperCase() + day.slice(1)} :</label>
+        <input 
+          className={styles.input}
+          type="text"
+          name={day}
+          value={horaires[day]}
+          onChange={handleInputChange}
+        />
+      </div>
+    ));
   };
 
   return (
     <div>
-        <Header />
-        <Link href="/Admin/SpaceAdmin"> {/* Lien vers l'espace administrateur ici */}
-            <a className={styles.adminButton}>Espace Administrateur</a>
-        </Link>
-        <div className={styles.container}>
+      <Header />
+      <Link href="/Admin/SpaceAdmin" className={styles.adminButton}>Espace Administrateur</Link>
+      <div className={styles.container}>
         <h1 className={styles.title}>Modifier les horaires</h1>
         <form onSubmit={handleSubmit}>
-            <div className={styles.inputGroup}>
-            <label>Lundi :</label>
-            <input className={styles.input} type="text" name="lundi" value={horaires.lundi} onChange={handleInputChange} />
-            </div>
-            <div className={styles.inputGroup}>
-            <label>Mardi :</label>
-            <input className={styles.input} type="text" name="mardi" value={horaires.mardi} onChange={handleInputChange} />
-            </div>
-            <div className={styles.inputGroup}>
-            <label>Mercredi :</label>
-            <input className={styles.input} type="text" name="mercredi" value={horaires.mercredi} onChange={handleInputChange} />
-            </div>
-            <div className={styles.inputGroup}>
-            <label>Jeudi :</label>
-            <input className={styles.input} type="text" name="jeudi" value={horaires.jeudi} onChange={handleInputChange} />
-            </div>
-            <div className={styles.inputGroup}>
-            <label>Vendredi :</label>
-            <input className={styles.input} type="text" name="vendredi" value={horaires.vendredi} onChange={handleInputChange} />
-            </div>
-            <div className={styles.inputGroup}>
-            <label>Samedi :</label>
-            <input className={styles.input} type="text" name="samedi" value={horaires.samedi} onChange={handleInputChange} />
-            </div>
-            <div className={styles.inputGroup}>
-            <label>Dimanche :</label>
-            <input className={styles.input} type="text" name="dimanche" value={horaires.dimanche} onChange={handleInputChange} />
-            </div>
-            <button className={styles.submitButton} type="submit">Enregistrer</button>
+          {renderForm()}
+          <button className={styles.submitButton} type="submit">Enregistrer</button>
         </form>
-        </div>
-        <Footer />
+      </div>
+      <Footer />
     </div>
   );
 };

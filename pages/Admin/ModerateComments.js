@@ -3,24 +3,36 @@
 
 
 // pages/Admin/ModerateComments.js
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '../../styles/Admin/ModerateComments.module.css';
 import Header from '../../Componente/Header';
 import Footer from '../../Componente/Footer';
-import { MessageData } from '../../Componente/MessageData';
 
 const ModerateComments = () => {
-  const [comments, setComments] = useState(MessageData);
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/messages')
+      .then(res => res.json())
+      .then(data => setComments(data))
+      .catch(err => console.error(err));
+  }, []);
 
   const handleApproval = (id, decision) => {
-    const updatedComments = comments.map(comment => {
-      if (comment.id === id) {
-        return {...comment, approved: decision};
-      }
-      return comment;
-    });
+    fetch('/api/messages', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, approved: decision })
+    }).then(() => {
+      const updatedComments = comments.map(comment => {
+        if (comment.id === id) {
+          return {...comment, approved: decision};
+        }
+        return comment;
+      });
 
-    setComments(updatedComments);
+      setComments(updatedComments);
+    });
   }
 
   return (
