@@ -1,33 +1,28 @@
+
 // pages/Admin/UpdateTime.js
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/Admin/UpdateTime.module.css';
 import Header from '../../Componente/Header';
 import Footer from '../../Componente/Footer';
+import { useHoraires } from '../api/Admin/SpaceAdmin/HorairesContext';
 
 const UpdateTime = () => {
-  const defaultHoraires = {
-    lundi: 'Fermé',
-    mardi: '9h00 - 12h30, 14h00 - 18h30',
-    mercredi: '9h00 - 12h30, 14h00 - 18h30',
-    jeudi: '9h00 - 12h30, 14h00 - 18h30',
-    vendredi: '9h00 - 12h30, 14h00 - 18h30',
-    samedi: '9h00 - 12h30, 14h00 - 19h00',
-    dimanche: 'Fermé',
-  };
-  
-  const [horaires, setHoraires] = useState(defaultHoraires);
+  const { horaires, setHoraires } = useHoraires();
+  const [tempHoraires, setTempHoraires] = useState(horaires);
 
   const handleInputChange = ({ target: { name, value }}) => {
-    setHoraires(prevHoraires => ({ ...prevHoraires, [name]: value }));
+    setTempHoraires(prevHoraires => ({ ...prevHoraires, [name]: value }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setHoraires(tempHoraires); // Mettez à jour l'état global
+
     const response = await fetch('/api/pages/UpdateTime', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(horaires),
+      body: JSON.stringify(tempHoraires),
     });
 
     if(response.ok) {
@@ -40,18 +35,18 @@ const UpdateTime = () => {
   };
 
   const renderForm = () => {
-    if(!defaultHoraires) {
+    if(!tempHoraires) {
       return <div>Pas d'horaires à afficher</div>;
     }
 
-    return Object.entries(defaultHoraires).map(([day,]) => (
+    return Object.entries(tempHoraires).map(([day, time]) => (
       <div key={day} className={styles.inputGroup}>
         <label>{day.charAt(0).toUpperCase() + day.slice(1)} :</label>
         <input 
           className={styles.input}
           type="text"
           name={day}
-          value={horaires[day]}
+          value={time}
           onChange={handleInputChange}
         />
       </div>
@@ -61,7 +56,7 @@ const UpdateTime = () => {
   return (
     <div>
       <Header />
-      <Link href="/Admin/SpaceAdmin" className={styles.adminButton}>Espace Administrateur</Link>
+      <Link href="/Admin" className={styles.adminButton}>Espace Administration</Link>
       <div className={styles.container}>
         <h1 className={styles.title}>Modifier les horaires</h1>
         <form onSubmit={handleSubmit}>

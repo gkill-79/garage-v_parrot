@@ -1,5 +1,3 @@
-
-
 // pages/Home/AppointmentForm.js
 import React from 'react';
 import styles from '../../../styles/Home/AppointmentForm.module.css';
@@ -21,8 +19,7 @@ const RdvForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
   
   const onSubmit = async (appointment) => {
-    console.log(appointment);
-    const response = await fetch('/api/pages/AppointmentForm', {
+    const response = await fetch('/api/AppointmentForm', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +27,6 @@ const RdvForm = () => {
       body: JSON.stringify(appointment),
     });
     
-
     if (response.ok) {
       console.log('Succès:', await response.json());
       alert('Votre rendez-vous a bien été pris en compte !');

@@ -12,12 +12,12 @@ const IndexAdmin = () => {
                 <h1 className={styles.title}>Espace Administration</h1>
                 <ul className={styles.list}>
                     <li className={styles.listItem}>
-                        <Link href="/Admin/SpaceUsed" className={styles.link}>
+                        <Link href="/Admin/SpaceUsed" className={styles.link} passHref>
                             Espace employés
                         </Link>
                     </li>
                     <li className={styles.listItem}>
-                        <Link href="/Admin/SpaceAdmin" className={styles.link}>
+                        <Link href="/Admin/SpaceAdmin" className={styles.link} passHref>
                             Espace administrateur
                         </Link>
                     </li>

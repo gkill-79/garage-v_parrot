@@ -1,16 +1,13 @@
-// pages/Home/Occasion/index.js
-
 import { useState, useEffect } from 'react';
 import CarCard from '../../../Componente/CarCard';  
 import Header from '../../../Componente/Header';
 import Footer from '../../../Componente/Footer';
 import styles from '../../../styles/Home/Occasion/CarPage.module.css';
-import { CarData } from './CarData';
-
+import { useCars } from './CarContext';
 
 const CarPage = () => {
+  const { cars } = useCars();
   const [selectedCar, setSelectedCar] = useState(null);
-  const cars = CarData ?? [];
 
   useEffect(() => {
     if (cars && cars.length > 0) {
@@ -28,22 +25,20 @@ const CarPage = () => {
       // Nettoyer l'intervalle quand le composant est démonté
       return () => clearInterval(intervalId);
     }
-  }, [cars]); 
+  }, [cars]);
 
   if (!selectedCar) {
     return null;
   }
 
   return (
-    <div>
+    <div className={styles.pageContainer}>
       <Header />
-      <div className={styles.pageContainer}>
-        <CarCard car={selectedCar} />
-      </div>
+      <CarCard car={selectedCar} />
       <Footer />
     </div>
   );
-};
+}
 
 export default CarPage;
 

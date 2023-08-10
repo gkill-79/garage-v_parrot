@@ -1,4 +1,3 @@
-// carData.js
 export const CarData = [
   {
     id: 1,
