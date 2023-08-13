@@ -19,12 +19,18 @@ function Header() {
                     <Image src="/path-to-phone-icon.png" alt="Téléphone" width={30} height={30} />
                     <span>+33 1 23 45 67 89</span>
                     <Image src="/path-to-user-icon.png" alt="Connexion" width={30} height={30} />
+                    <div className={styles.login}>
                         <Link href="/Admin" legacyBehavior>
                         <a className={styles.card}>
                             <h2>Se connecter</h2>
-                            <p>Accédez à votre compte.</p>
-                            </a>
+                        </a>
                         </Link>
+                        <Link href="/Admin/Login" legacyBehavior>
+                        <a className={styles.card}>
+                            <p>Accédez à votre compte.</p>
+                        </a>
+                        </Link>
+                    </div>            
                 </div>
             </div>
             <nav className={styles.navigation}>

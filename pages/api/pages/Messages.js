@@ -1,3 +1,4 @@
+
 // pages/api/messages.js
 import { NextApiRequest, NextApiResponse } from 'next'
 import { getMessagesFromDB, addMessageToDB, updateMessageInDB, deleteMessageFromDB } from './db';
@@ -63,9 +64,6 @@ const handler = async (req, res) => {
 }
 
 export default handler;
-
-
-
 
 
 

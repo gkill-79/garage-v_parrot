@@ -1,10 +1,34 @@
-// pages/Home/Messages/index.js
+// pages/Home/Messages/NosEngagements.js
+import { useState } from 'react';
 import styles from '../../../styles/Home/Messages/LeaveComment.module.css';
 import Header from '../../../Componente/Header';
 import Footer from '../../../Componente/Footer';
 import Messages from '../../../Componente/Messages';
 
 const NosEngagements = () => {
+  const [newComment, setNewComment] = useState('');
+
+  const handleAdd = async () => {
+    // Code pour ajouter le nouveau commentaire
+    // Vous aurez probablement besoin de faire une demande à l'API ici
+    try {
+      const response = await fetch('/api/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: newComment })
+      });
+      
+      const data = await response.json();
+
+      // Utilisez les données reçues ici si nécessaire
+      console.log('New comment added:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+    
+    setNewComment('');
+  }
+
   return (
     <div>
         <Header />
@@ -27,6 +51,14 @@ const NosEngagements = () => {
             <h2>NOS CLIENTS NOUS RECOMMANDENT</h2>
             </div>
         <Messages />
+          <div>
+              <textarea
+                value={newComment}
+                onChange={e => setNewComment(e.target.value)}
+                placeholder="Laissez un commentaire"
+              />
+            <button onClick={handleAdd}>Soumettre</button>
+          </div>
       </div>
       <Footer />
     </div>

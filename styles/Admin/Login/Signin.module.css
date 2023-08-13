@@ -1,0 +1,72 @@
+
+
+/* styles/Admin/Login/Signin.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.mailPass {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.signin {
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.signin:hover {
+  background-color: #0056b3;
+}
+
+.myTitle {
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.myForm {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
